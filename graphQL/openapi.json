@@ -1,0 +1,1014 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "LoopBack Application",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/category-movies/count": {
+      "get": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "count",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "CategoryMovie model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }]
+      }
+    },
+    "/category-movies/{id}": {
+      "put": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "CategoryMovie PUT success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryMovie"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "patch": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "CategoryMovie PATCH success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryMovie"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "get": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "CategoryMovie model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryMovie"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      },
+      "delete": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "CategoryMovie DELETE success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      }
+    },
+    "/category-movies": {
+      "post": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "create",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "CategoryMovie model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryMovie"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryMovie"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "CategoryMovie PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryMovie"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "x-controller-name": "CategoryMovieController",
+        "x-operation-name": "find",
+        "tags": [
+          "CategoryMovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of CategoryMovie model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoryMovie"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "filter",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "properties": {
+              "where": {
+                "type": "object"
+              },
+              "fields": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "name_ascii": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "skip": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "order": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }]
+      }
+    },
+    "/movies/count": {
+      "get": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "count",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }]
+      }
+    },
+    "/movies/{id}": {
+      "put": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Movie PUT success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "patch": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Movie PATCH success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "get": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "findById",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Movie"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      },
+      "delete": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Movie DELETE success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      }
+    },
+    "/movies": {
+      "post": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "create",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Movie"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Movie PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "x-controller-name": "MovieController",
+        "x-operation-name": "find",
+        "tags": [
+          "MovieController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Movie model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Movie"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "filter",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "properties": {
+              "where": {
+                "type": "object"
+              },
+              "fields": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "category_id": {
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  },
+                  "link": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "desc": {
+                    "type": "boolean"
+                  },
+                  "director": {
+                    "type": "boolean"
+                  },
+                  "release": {
+                    "type": "boolean"
+                  },
+                  "create_by": {
+                    "type": "boolean"
+                  },
+                  "create_at": {
+                    "type": "boolean"
+                  },
+                  "name_ascii": {
+                    "type": "boolean"
+                  },
+                  "total_ep": {
+                    "type": "boolean"
+                  },
+                  "public": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "skip": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "order": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }]
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "greeting": {
+                      "type": "string"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Content-Type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todos/count": {
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "count",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }]
+      }
+    },
+    "/todos/{id}": {
+      "put": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Todo PUT success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "patch": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Todo PATCH success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      },
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      },
+      "delete": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "Todo DELETE success"
+          }
+        },
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "number"
+          },
+          "required": true
+        }]
+      }
+    },
+    "/todos": {
+      "post": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "create",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "where",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "type": "object"
+          }
+        }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "find",
+        "tags": [
+          "TodoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Todo model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Todo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [{
+          "name": "filter",
+          "in": "query",
+          "style": "deepObject",
+          "explode": true,
+          "schema": {
+            "properties": {
+              "where": {
+                "type": "object"
+              },
+              "fields": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "skip": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "order": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }]
+      }
+    }
+  },
+  "servers": [{
+    "url": "http://127.0.0.1:3000"
+  }],
+  "components": {
+    "schemas": {
+      "CategoryMovie": {
+        "title": "CategoryMovie",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "name_ascii": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "Movie": {
+        "title": "Movie",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "director": {
+            "type": "string"
+          },
+          "release": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "create_by": {
+            "type": "number"
+          },
+          "create_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name_ascii": {
+            "type": "string"
+          },
+          "total_ep": {
+            "type": "number"
+          },
+          "public": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "category_id",
+          "status",
+          "name",
+          "create_by",
+          "create_at",
+          "total_ep",
+          "public"
+        ]
+      },
+      "Todo": {
+        "title": "Todo",
+        "properties": {
+          "id": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
