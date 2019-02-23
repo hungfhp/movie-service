@@ -1,20 +1,22 @@
 const application = require('./dist');
+// import config from "./config"
+var config = require("./config");
 
 module.exports = application;
 
 if (require.main === module) {
   // Run the application
-  const config = {
+  const configRest = {
     rest: {
-      port: +process.env.PORT || 3000,
-      host: process.env.HOST || 'localhost',
+      port: config.port,
+      host: config.host,
       openApiSpec: {
         // useful when used with OASGraph to locate your application
         setServersFromRequest: true,
       },
     },
   };
-  application.main(config).catch(err => {
+  application.main(configRest).catch(err => {
     console.error('Cannot start the application.', err);
     process.exit(1);
   });
