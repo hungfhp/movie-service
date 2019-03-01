@@ -8,7 +8,7 @@ export class CategoryMovieRepository extends DefaultCrudRepository<
   typeof CategoryMovie.prototype.id
   > {
   constructor(
-    @inject('datasources.todo') dataSource: MongoDataSource,
+    @inject('datasources.mongo') dataSource: MongoDataSource,
   ) {
     super(CategoryMovie, dataSource);
   }
