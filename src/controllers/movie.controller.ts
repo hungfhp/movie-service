@@ -20,29 +20,6 @@ import {
 import { Movie } from '../models';
 import { MovieRepository } from '../repositories';
 
-const PING_RESPONSE: ResponseObject = {
-  description: 'Ping Response',
-  content: {
-    'application/json': {
-      schema: {
-        type: 'object',
-        properties: {
-          greeting: { type: 'string' },
-          date: { type: 'string' },
-          url: { type: 'string' },
-          headers: {
-            type: 'object',
-            properties: {
-              'Content-Type': { type: 'string' },
-            },
-            additionalProperties: true,
-          },
-        },
-      },
-    },
-  },
-};
-
 export class MovieController {
   constructor(
     @repository(MovieRepository)
